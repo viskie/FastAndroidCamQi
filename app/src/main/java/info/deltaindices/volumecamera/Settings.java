@@ -4,7 +4,7 @@ import android.net.Uri;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 final class Settings {
- static final String PREFS="volume_camera", ARMED="armed", INTERVAL="interval_seconds", PRESSES="presses", DRIVE_TOKEN="drive_token", DRIVE_FOLDER="drive_folder", DRIVE_FOLDER_ID="drive_folder_id", DRIVE_AUTH_REQUIRED="drive_auth_required", CAPTURE_ACTIVE="capture_active", SESSION_COUNT="session_count", NEXT_SESSION="next_session";
+ static final String PREFS="volume_camera", ARMED="armed", INTERVAL="interval_seconds", PRESSES="presses", DRIVE_TOKEN="drive_token", DRIVE_FOLDER="drive_folder", DRIVE_FOLDER_ID="drive_folder_id", DRIVE_AUTH_REQUIRED="drive_auth_required", CAPTURE_ACTIVE="capture_active", SESSION_COUNT="session_count", NEXT_SESSION="next_session", CAPTURE_ERROR="capture_error";
  static android.content.SharedPreferences prefs(Context c){return c.getSharedPreferences(PREFS,Context.MODE_PRIVATE);}
  static boolean armed(Context c){return prefs(c).getBoolean(ARMED,false);}
  static int interval(Context c){return Math.max(2,Math.min(3600,prefs(c).getInt(INTERVAL,5)));}
