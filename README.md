@@ -17,10 +17,11 @@ the installed Drive app; failed cloud copies never delete the camera-roll file.
 From the repository root:
 
 ```sh
-android/gradlew -p camera-trigger-android :app:assembleDebug
+./gradlew :app:assembleDebug
 ```
 
-Install `camera-trigger-android/app/build/outputs/apk/debug/app-debug.apk`.
+Install `app/build/outputs/apk/debug/app-debug.apk`, or download the checked-in
+APK from `releases/volume-camera-v1.0.1-debug.apk`.
 Open it once, grant Camera and Notifications, choose the trigger settings,
 enable **Volume Camera** under Android Accessibility settings, then arm it.
 
