@@ -26,6 +26,11 @@ each photo for immediate Drive API upload on Wi-Fi or mobile data. The UI shows
 pictures taken, synced, pending, and failed attempts. WorkManager retries
 network failures; camera-roll originals are never deleted.
 
+The bottom of the main screen has a collapsible **Error logs** section. Volume
+listener, capture-service, Drive-sync, and otherwise uncaught failures are
+preserved across app restarts (up to 100 entries), selectable for copying, and
+clearable manually. These diagnostics remain local and are not uploaded.
+
 Before Drive authorization can succeed, enable Google Drive API in Google Cloud,
 configure the OAuth consent screen with `drive.file`, and create an Android
 OAuth client for package `info.deltaindices.volumecamera` using the signing
