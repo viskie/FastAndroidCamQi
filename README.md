@@ -12,8 +12,9 @@ visible. Trigger again or press Stop to end.
 
 Every session also records AAC audio while the foreground service is active.
 Session media use a persistent counter: `SESSION_000001.m4a` and
-`SESSION_000001_000001.jpg`, `_000002.jpg`, and so on. Audio is stored in
-`DCIM/VolumeCamera/Audio` and synchronized into an `Audio` subfolder inside the
+`SESSION_000001_000001.jpg`, `_000002.jpg`, and so on. Android requires audio
+to use a public audio collection, so recordings are stored in
+`Music/VolumeCamera/Audio` and synchronized into an `Audio` subfolder inside the
 configured Drive folder. Android always shows its microphone privacy indicator,
 and the foreground notification explicitly states that camera and microphone
 are active.

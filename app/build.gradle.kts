@@ -3,7 +3,7 @@ plugins { id("com.android.application") }
 android {
     namespace="info.deltaindices.volumecamera"
     compileSdk=37
-    defaultConfig { applicationId="info.deltaindices.volumecamera"; minSdk=26; targetSdk=37; versionCode=6; versionName="1.3.1" }
+    defaultConfig { applicationId="info.deltaindices.volumecamera"; minSdk=26; targetSdk=37; versionCode=7; versionName="1.3.2" }
     buildTypes { release { isMinifyEnabled=false; proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),"proguard-rules.pro") } }
     compileOptions { sourceCompatibility=JavaVersion.VERSION_17; targetCompatibility=JavaVersion.VERSION_17 }
 }
