@@ -4,7 +4,11 @@ This standalone app arms a visible foreground service. When its explicitly
 enabled Accessibility service detects 3 or 5 Volume Up presses within five
 seconds, it opens a visible capture activity over the lock screen, turns the
 screen on when Android delivers the key sequence, and takes rear-camera JPEGs at the
-configured interval with flash disabled. Trigger again or press Stop to end.
+configured interval with flash disabled. The capture screen contains only a
+green/red Start/Stop button and the session picture count. Once started, a
+camera foreground service continues while you press Home or use another app;
+Android's camera privacy indicator and explicit foreground notification remain
+visible. Trigger again or press Stop to end.
 Images are written to `DCIM/VolumeCamera`, which appears in the camera roll.
 
 An optional Google account is connected in-app through OAuth using the narrow
@@ -52,3 +56,6 @@ armed notification and capture notification are intentional. Some OEM battery
 managers may require excluding the app from battery optimization after reboot.
 Android/OEM lock screens decide whether volume-key events reach accessibility;
 the app cannot bypass a secure keyguard or an OEM that reserves those keys.
+In particular, if the OEM does not route volume events while the display is
+fully asleep, the user must wake the display first. A normal application cannot
+intercept the hardware power button or override that system behavior.
