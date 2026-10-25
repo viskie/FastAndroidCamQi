@@ -1,0 +1,1 @@
+<resources><string name="app_name">Volume Camera</string><string name="accessibility_description">Detects only the configured Volume Up sequence while armed. It does not inspect screen content.</string></resources>
