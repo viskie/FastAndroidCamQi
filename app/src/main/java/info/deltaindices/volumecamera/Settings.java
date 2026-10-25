@@ -4,7 +4,7 @@ import android.net.Uri;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 final class Settings {
- static final String PREFS="volume_camera", ARMED="armed", INTERVAL="interval_seconds", PRESSES="presses", DRIVE_TOKEN="drive_token", DRIVE_FOLDER="drive_folder", DRIVE_FOLDER_ID="drive_folder_id", DRIVE_AUTH_REQUIRED="drive_auth_required", CAPTURE_ACTIVE="capture_active", SESSION_COUNT="session_count";
+ static final String PREFS="volume_camera", ARMED="armed", INTERVAL="interval_seconds", PRESSES="presses", DRIVE_TOKEN="drive_token", DRIVE_FOLDER="drive_folder", DRIVE_FOLDER_ID="drive_folder_id", DRIVE_AUTH_REQUIRED="drive_auth_required", CAPTURE_ACTIVE="capture_active", SESSION_COUNT="session_count", NEXT_SESSION="next_session";
  static android.content.SharedPreferences prefs(Context c){return c.getSharedPreferences(PREFS,Context.MODE_PRIVATE);}
  static boolean armed(Context c){return prefs(c).getBoolean(ARMED,false);}
  static int interval(Context c){return Math.max(2,Math.min(3600,prefs(c).getInt(INTERVAL,5)));}
@@ -14,5 +14,6 @@ final class Settings {
  static void setDriveToken(Context c,String token){securePrefs(c).edit().putString(DRIVE_TOKEN,token).apply();}
  static void clearDriveToken(Context c){securePrefs(c).edit().remove(DRIVE_TOKEN).apply();}
  static String driveFolder(Context c){return prefs(c).getString(DRIVE_FOLDER,"FastAndroidCamQi");}
+ static synchronized String nextSessionBase(Context c){int number=prefs(c).getInt(NEXT_SESSION,0)+1;prefs(c).edit().putInt(NEXT_SESSION,number).commit();return String.format(java.util.Locale.US,"SESSION_%06d",number);}
  private Settings(){}
 }

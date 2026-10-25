@@ -9,6 +9,14 @@ green/red Start/Stop button and the session picture count. Once started, a
 camera foreground service continues while you press Home or use another app;
 Android's camera privacy indicator and explicit foreground notification remain
 visible. Trigger again or press Stop to end.
+
+Every session also records AAC audio while the foreground service is active.
+Session media use a persistent counter: `SESSION_000001.m4a` and
+`SESSION_000001_000001.jpg`, `_000002.jpg`, and so on. Audio is stored in
+`DCIM/VolumeCamera/Audio` and synchronized into an `Audio` subfolder inside the
+configured Drive folder. Android always shows its microphone privacy indicator,
+and the foreground notification explicitly states that camera and microphone
+are active.
 Images are written to `DCIM/VolumeCamera`, which appears in the camera roll.
 
 An optional Google account is connected in-app through OAuth using the narrow
